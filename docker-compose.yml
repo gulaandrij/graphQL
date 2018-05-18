@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    container_name: app.app
+    ports:
+     - "83:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - backend
+
+  postgres:
+    image: postgres
+    container_name: app.postgres
+    restart: always
+    environment:
+      POSTGRES_DB: app
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+
+  adminer:
+    image: adminer
+    container_name: app.adminer
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+
+networks:
+  backend: ~

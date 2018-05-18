@@ -1,0 +1,6 @@
+<?php
+return array (
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\PageInfoType' => __DIR__ . '/PageInfoType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\QueryType' => __DIR__ . '/QueryType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\FooType' => __DIR__ . '/FooType.php',
+);
