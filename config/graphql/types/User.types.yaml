@@ -1,0 +1,11 @@
+User:
+  type: object
+  config:
+    description: "An User"
+    fields:
+      id:
+        type: "Int!"
+        description: "The unique ID of the user."
+      username:
+        description: "Resolves using the user name."
+        type: "String"

@@ -3,6 +3,7 @@ namespace Overblog\GraphQLBundle\__DEFINITIONS__;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
+use GraphQL\Type\Definition\ResolveInfo;
 use Overblog\GraphQLBundle\Definition\ConfigProcessor;
 use Overblog\GraphQLBundle\Definition\LazyConfig;
 use Overblog\GraphQLBundle\Definition\GlobalVariables;
@@ -19,14 +20,26 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
         $configLoader = function(GlobalVariables $globalVariable) {
             return [
             'name' => 'Query',
-            'description' => null,
+            'description' => 'Apartments ORM repository',
             'fields' => function () use ($globalVariable) {
                 return [
-                'bar' => [
-                    'type' => Type::nonNull($globalVariable->get('typeResolver')->resolve('Foo')),
+                'user' => [
+                    'type' => $globalVariable->get('typeResolver')->resolve('User'),
                     'args' => [
+                        [
+                            'name' => 'id',
+                            'type' => Type::int(),
+                            'description' => 'Resolves using the user id.',
+                        ],
+                        [
+                            'name' => 'username',
+                            'type' => Type::string(),
+                            'description' => 'Resolves using the user name.',
+                        ],
                     ],
-                    'resolve' => null,
+                    'resolve' => function ($value, $args, $context, ResolveInfo $info) use ($globalVariable) {
+                        return $globalVariable->get('resolverResolver')->resolve(["User", array(0 => $args)]);
+                    },
                     'description' => null,
                     'deprecationReason' => null,
                     'complexity' => null,
