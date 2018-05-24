@@ -1,7 +1,7 @@
 Query:
   type: object
   config:
-    description: "Apartments ORM repository"
+    description: "Users ORM repository"
     fields:
       user:
         type: "User"
@@ -9,7 +9,7 @@ Query:
           id:
             description: "Resolves using the user id."
             type: "Int"
-          username:
-            description: "Resolves using the user name."
-            type: "String"
+#          username:
+#            description: "Resolves using the user name."
+#            type: "String"
         resolve: "@=resolver('User', [args])"

@@ -8,9 +8,15 @@ use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
+/**
+ * Class UserResolver
+ * @package App\GraphQL\Resolver
+ */
 class UserResolver implements ResolverInterface, AliasedInterface
 {
-
+    /**
+     * @var EntityManagerInterface
+     */
     private $em;
 
     /**
@@ -24,13 +30,11 @@ class UserResolver implements ResolverInterface, AliasedInterface
 
     /**
      * @param Argument $args
-     * @return User[]
+     * @return User|null
      */
-    public function resolve(Argument $args): ?array
+    public function resolve(Argument $args): ?User
     {
-//        dump($args);
-
-        return $this->em->getRepository(User::class)->findBy(['username'=>$args['username']]);
+        return $this->em->getRepository(User::class)->find($args['id']);
     }
 
     /**

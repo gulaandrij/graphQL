@@ -9,3 +9,9 @@ User:
       username:
         description: "Resolves using the user name."
         type: "String"
+      email:
+        description: "Resolves using the user email."
+        type: "String"
+      last_login:
+        description: "Resolves using the user last_login."
+        type: "String"

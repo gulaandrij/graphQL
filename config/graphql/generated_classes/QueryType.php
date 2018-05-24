@@ -20,7 +20,7 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
         $configLoader = function(GlobalVariables $globalVariable) {
             return [
             'name' => 'Query',
-            'description' => 'Apartments ORM repository',
+            'description' => 'Users ORM repository',
             'fields' => function () use ($globalVariable) {
                 return [
                 'user' => [
@@ -30,11 +30,6 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
                             'name' => 'id',
                             'type' => Type::int(),
                             'description' => 'Resolves using the user id.',
-                        ],
-                        [
-                            'name' => 'username',
-                            'type' => Type::string(),
-                            'description' => 'Resolves using the user name.',
                         ],
                     ],
                     'resolve' => function ($value, $args, $context, ResolveInfo $info) use ($globalVariable) {
