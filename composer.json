@@ -1,5 +1,7 @@
 {
+    "name": "gulaandrij/graphql",
     "type": "project",
+    "description": "GraphQL project",
     "license": "proprietary",
     "require": {
         "php": "^7.2",

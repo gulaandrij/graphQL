@@ -28,7 +28,26 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
                     'args' => [
                         [
                             'name' => 'id',
-                            'type' => Type::int(),
+                            'type' => Type::nonNull(Type::int()),
+                            'description' => 'Resolves using the user id.',
+                        ],
+                    ],
+                    'resolve' => function ($value, $args, $context, ResolveInfo $info) use ($globalVariable) {
+                        return $globalVariable->get('resolverResolver')->resolve(["User", array(0 => $args)]);
+                    },
+                    'description' => null,
+                    'deprecationReason' => null,
+                    'complexity' => null,
+                    # public and access are custom options managed only by the bundle
+                    'public' => null,
+                    'access' => null,
+                ],
+                'users' => [
+                    'type' => Type::listOf($globalVariable->get('typeResolver')->resolve('User')),
+                    'args' => [
+                        [
+                            'name' => 'ids',
+                            'type' => Type::nonNull(Type::listOf(Type::nonNull(Type::int()))),
                             'description' => 'Resolves using the user id.',
                         ],
                     ],

@@ -20,10 +20,20 @@ class Users extends Fixture implements ContainerAwareInterface
 
         $user = $userManager->createUser();
         $user->setEmail('admin@mail.com');
-        $user->setPassword('admin');
         $user->setUsername('admin');
+        $user->setPlainPassword('admin');
 
         $userManager->updateUser($user);
+
+        for ($i=0;$i<100;$i++){
+            $user = $userManager->createUser();
+            $user->setEmail("admin$i@mail.com");
+            $user->setUsername("admin$i");
+            $user->setPlainPassword('admin');
+
+            $userManager->updateUser($user);
+        }
+
     }
 
 }

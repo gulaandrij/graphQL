@@ -30,11 +30,11 @@ class UserResolver implements ResolverInterface, AliasedInterface
 
     /**
      * @param Argument $args
-     * @return User|null
+     * @return User[]
      */
-    public function resolve(Argument $args): ?User
+    public function resolve(Argument $args): ?array
     {
-        return $this->em->getRepository(User::class)->find($args['id']);
+        return $this->em->getRepository(User::class)->findBy(['id'=>$args['ids']]);
     }
 
     /**

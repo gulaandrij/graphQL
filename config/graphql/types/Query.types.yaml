@@ -8,7 +8,17 @@ Query:
         args:
           id:
             description: "Resolves using the user id."
-            type: "Int"
+            type: "Int!"
+#          username:
+#            description: "Resolves using the user name."
+#            type: "String"
+        resolve: "@=resolver('User', [args])"
+      users:
+        type: "[User]"
+        args:
+          ids:
+            description: "Resolves using the user id."
+            type: "[Int!]!"
 #          username:
 #            description: "Resolves using the user name."
 #            type: "String"

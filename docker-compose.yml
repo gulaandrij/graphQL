@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: build/Dockerfile
-    container_name: app.app
+    container_name: graphql.app
     ports:
      - "83:80"
     volumes:
@@ -15,7 +15,7 @@ services:
 
   postgres:
     image: postgres
-    container_name: app.postgres
+    container_name: graphql.postgres
     restart: always
     environment:
       POSTGRES_DB: app
@@ -27,7 +27,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: app.adminer
+    container_name: graphql.adminer
     restart: always
     depends_on:
       - postgres
