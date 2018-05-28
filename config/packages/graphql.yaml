@@ -3,6 +3,7 @@ overblog_graphql:
         cache_dir: "%kernel.project_dir%/config/graphql/generated_classes/"
         schema:
             query: Query
+            mutation: RootMutation
         mappings:
             auto_discover: false
             types:

@@ -8,7 +8,6 @@
 
 namespace App\Security;
 
-
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 class CorsListener

@@ -1,0 +1,6 @@
+RootMutation:
+    type: object
+    config:
+        fields:
+            subtopicId:
+                type: "ID!"

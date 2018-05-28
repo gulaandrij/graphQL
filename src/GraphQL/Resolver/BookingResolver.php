@@ -32,7 +32,9 @@ class BookingResolver implements ResolverInterface, AliasedInterface
      */
     public function resolve(Argument $args): array
     {
-        return $this->em->getRepository(Booking::class)->findBy(['id' => $args['id']]);
+        dump($this->em->getRepository(Booking::class)->findBy(['id' => $args['ids']]));
+
+        return $this->em->getRepository(Booking::class)->findBy(['id' => $args['ids']]);
     }
 
     /**
