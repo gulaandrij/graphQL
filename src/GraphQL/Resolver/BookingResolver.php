@@ -2,18 +2,13 @@
 
 namespace App\GraphQL\Resolver;
 
-use App\Entity\User;
+use App\Entity\Booking;
 use Doctrine\ORM\EntityManagerInterface;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
-/**
- * Class UserResolver
- *
- * @package App\GraphQL\Resolver
- */
-class UserResolver implements ResolverInterface, AliasedInterface
+class BookingResolver implements ResolverInterface, AliasedInterface
 {
 
     /**
@@ -33,11 +28,11 @@ class UserResolver implements ResolverInterface, AliasedInterface
 
     /**
      * @param Argument $args
-     * @return User[]
+     * @return Booking[]
      */
-    public function resolve(Argument $args): ?array
+    public function resolve(Argument $args): array
     {
-        return $this->em->getRepository(User::class)->findBy(['id' => $args['ids']]);
+        return $this->em->getRepository(Booking::class)->findBy(['id' => $args['id']]);
     }
 
     /**
@@ -45,6 +40,6 @@ class UserResolver implements ResolverInterface, AliasedInterface
      */
     public static function getAliases(): array
     {
-        return ['resolve' => 'User'];
+        return ['resolve' => 'Booking'];
     }
 }

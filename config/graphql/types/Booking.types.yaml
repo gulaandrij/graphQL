@@ -1,0 +1,14 @@
+Booking:
+  type: object
+  config:
+    description: "An MeetingRoom"
+    fields:
+      id:
+        type: "Int!"
+        description: "The unique ID of the booking."
+      user:
+        description: "User who booked room"
+        type: "User"
+      meetind_room:
+        description: "Meeting Room"
+        type: "MeetingRoom"

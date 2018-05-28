@@ -22,18 +22,18 @@ class Users extends Fixture implements ContainerAwareInterface
         $user->setEmail('admin@mail.com');
         $user->setUsername('admin');
         $user->setPlainPassword('admin');
+        $this->addReference('admin', $user);
 
         $userManager->updateUser($user);
 
-        for ($i=0;$i<100;$i++){
+        for ($i = 0; $i < 100; $i++) {
             $user = $userManager->createUser();
             $user->setEmail("admin$i@mail.com");
             $user->setUsername("admin$i");
             $user->setPlainPassword('admin');
+            $this->addReference("admin$i", $user);
 
             $userManager->updateUser($user);
         }
-
     }
-
 }

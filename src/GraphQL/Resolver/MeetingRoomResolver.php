@@ -2,18 +2,17 @@
 
 namespace App\GraphQL\Resolver;
 
-use App\Entity\User;
+use App\Entity\MeetingRoom;
 use Doctrine\ORM\EntityManagerInterface;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
 /**
- * Class UserResolver
- *
+ * Class MeetingRoomResolver
  * @package App\GraphQL\Resolver
  */
-class UserResolver implements ResolverInterface, AliasedInterface
+class MeetingRoomResolver implements ResolverInterface, AliasedInterface
 {
 
     /**
@@ -33,11 +32,11 @@ class UserResolver implements ResolverInterface, AliasedInterface
 
     /**
      * @param Argument $args
-     * @return User[]
+     * @return MeetingRoom
      */
-    public function resolve(Argument $args): ?array
+    public function resolve(Argument $args): ?MeetingRoom
     {
-        return $this->em->getRepository(User::class)->findBy(['id' => $args['ids']]);
+        return $this->em->getRepository(MeetingRoom::class)->find(['id' => $args['id']]);
     }
 
     /**
@@ -45,6 +44,6 @@ class UserResolver implements ResolverInterface, AliasedInterface
      */
     public static function getAliases(): array
     {
-        return ['resolve' => 'User'];
+        return ['resolve' => 'MeetingRoom'];
     }
 }

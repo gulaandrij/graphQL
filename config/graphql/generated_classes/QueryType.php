@@ -61,6 +61,44 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
                     'public' => null,
                     'access' => null,
                 ],
+                'meetingroom' => [
+                    'type' => $globalVariable->get('typeResolver')->resolve('MeetingRoom'),
+                    'args' => [
+                        [
+                            'name' => 'id',
+                            'type' => Type::int(),
+                            'description' => 'Resolves using the room id.',
+                        ],
+                    ],
+                    'resolve' => function ($value, $args, $context, ResolveInfo $info) use ($globalVariable) {
+                        return $globalVariable->get('resolverResolver')->resolve(["MeetingRoom", array(0 => $args)]);
+                    },
+                    'description' => null,
+                    'deprecationReason' => null,
+                    'complexity' => null,
+                    # public and access are custom options managed only by the bundle
+                    'public' => null,
+                    'access' => null,
+                ],
+                'booking' => [
+                    'type' => $globalVariable->get('typeResolver')->resolve('Booking'),
+                    'args' => [
+                        [
+                            'name' => 'ids',
+                            'type' => Type::listOf(Type::int()),
+                            'description' => 'Resolves using the booking.',
+                        ],
+                    ],
+                    'resolve' => function ($value, $args, $context, ResolveInfo $info) use ($globalVariable) {
+                        return $globalVariable->get('resolverResolver')->resolve(["Booking", array(0 => $args)]);
+                    },
+                    'description' => null,
+                    'deprecationReason' => null,
+                    'complexity' => null,
+                    # public and access are custom options managed only by the bundle
+                    'public' => null,
+                    'access' => null,
+                ],
             ];
             },
             'interfaces' => function () use ($globalVariable) {

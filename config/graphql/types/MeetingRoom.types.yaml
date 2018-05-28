@@ -1,0 +1,11 @@
+MeetingRoom:
+  type: object
+  config:
+    description: "An MeetingRoom"
+    fields:
+      id:
+        type: "Int!"
+        description: "The unique ID of the user."
+      name:
+        description: "Resolves using the name."
+        type: "String"

@@ -23,3 +23,17 @@ Query:
 #            description: "Resolves using the user name."
 #            type: "String"
         resolve: "@=resolver('User', [args])"
+      meetingroom:
+        type: "MeetingRoom"
+        args:
+          id:
+            description: "Resolves using the room id."
+            type: "Int"
+        resolve: "@=resolver('MeetingRoom', [args])"
+      booking:
+        type: "Booking"
+        args:
+          ids:
+            description: "Resolves using the booking."
+            type: "[Int]"
+        resolve: "@=resolver('Booking', [args])"
