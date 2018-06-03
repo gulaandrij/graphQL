@@ -66,7 +66,7 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
                     'args' => [
                         [
                             'name' => 'id',
-                            'type' => Type::int(),
+                            'type' => Type::nonNull(Type::int()),
                             'description' => 'Resolves using the room id.',
                         ],
                     ],
@@ -84,8 +84,8 @@ final class QueryType extends ObjectType implements GeneratedTypeInterface
                     'type' => $globalVariable->get('typeResolver')->resolve('Booking'),
                     'args' => [
                         [
-                            'name' => 'ids',
-                            'type' => Type::listOf(Type::int()),
+                            'name' => 'id',
+                            'type' => Type::nonNull(Type::int()),
                             'description' => 'Resolves using the booking.',
                         ],
                     ],

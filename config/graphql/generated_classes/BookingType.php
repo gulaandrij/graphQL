@@ -35,7 +35,7 @@ final class BookingType extends ObjectType implements GeneratedTypeInterface
                     'access' => null,
                 ],
                 'user' => [
-                    'type' => $globalVariable->get('typeResolver')->resolve('User'),
+                    'type' => Type::nonNull($globalVariable->get('typeResolver')->resolve('User')),
                     'args' => [
                     ],
                     'resolve' => null,
@@ -47,7 +47,7 @@ final class BookingType extends ObjectType implements GeneratedTypeInterface
                     'access' => null,
                 ],
                 'meetind_room' => [
-                    'type' => $globalVariable->get('typeResolver')->resolve('MeetingRoom'),
+                    'type' => Type::nonNull($globalVariable->get('typeResolver')->resolve('MeetingRoom')),
                     'args' => [
                     ],
                     'resolve' => null,

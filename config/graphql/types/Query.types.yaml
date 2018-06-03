@@ -28,12 +28,12 @@ Query:
         args:
           id:
             description: "Resolves using the room id."
-            type: "Int"
+            type: "Int!"
         resolve: "@=resolver('MeetingRoom', [args])"
       booking:
         type: "Booking"
         args:
-          ids:
+          id:
             description: "Resolves using the booking."
-            type: "[Int]"
+            type: "Int!"
         resolve: "@=resolver('Booking', [args])"

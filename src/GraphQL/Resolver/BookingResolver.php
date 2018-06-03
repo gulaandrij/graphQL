@@ -8,6 +8,10 @@ use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
+/**
+ * Class BookingResolver
+ * @package App\GraphQL\Resolver
+ */
 class BookingResolver implements ResolverInterface, AliasedInterface
 {
 
@@ -28,13 +32,20 @@ class BookingResolver implements ResolverInterface, AliasedInterface
 
     /**
      * @param Argument $args
-     * @return Booking[]
+     * @return Booking|null
      */
-    public function resolve(Argument $args): array
+    public function resolve(Argument $args): ?Booking
     {
-        dump($this->em->getRepository(Booking::class)->findBy(['id' => $args['ids']]));
+        return $this->em->getRepository(Booking::class)->findOneBy(['id' => $args['id']]);
+    }
 
-        return $this->em->getRepository(Booking::class)->findBy(['id' => $args['ids']]);
+    /**
+     * @param Argument $args
+     * @return Booking|null
+     */
+    public function resolve1(Argument $args): ?Booking
+    {
+        return null;
     }
 
     /**
@@ -42,6 +53,9 @@ class BookingResolver implements ResolverInterface, AliasedInterface
      */
     public static function getAliases(): array
     {
-        return ['resolve' => 'Booking'];
+        return [
+            'resolve' => 'Booking',
+            'resolve1' => 'Booking1',
+        ];
     }
 }

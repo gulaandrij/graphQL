@@ -36,7 +36,7 @@ class MeetingRoomResolver implements ResolverInterface, AliasedInterface
      */
     public function resolve(Argument $args): ?MeetingRoom
     {
-        return $this->em->getRepository(MeetingRoom::class)->find(['id' => $args['id']]);
+        return $this->em->getRepository(MeetingRoom::class)->findOneBy(['id' => $args['id']]);
     }
 
     /**

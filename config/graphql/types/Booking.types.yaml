@@ -8,7 +8,9 @@ Booking:
         description: "The unique ID of the booking."
       user:
         description: "User who booked room"
-        type: "User"
+        type: "User!"
+#        resolve: "@=resolver('User', [args])"
       meetind_room:
         description: "Meeting Room"
-        type: "MeetingRoom"
+        type: "MeetingRoom!"
+#        resolve: "@=resolver('MeetingRoom', [args])"

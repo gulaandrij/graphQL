@@ -1,9 +1,9 @@
 <?php
 return array (
-  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\PageInfoType' => __DIR__ . '/PageInfoType.php',
-  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\QueryType' => __DIR__ . '/QueryType.php',
-  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\UserType' => __DIR__ . '/UserType.php',
-  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\RootMutationType' => __DIR__ . '/RootMutationType.php',
-  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\BookingType' => __DIR__ . '/BookingType.php',
   'Overblog\\GraphQLBundle\\__DEFINITIONS__\\MeetingRoomType' => __DIR__ . '/MeetingRoomType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\BookingType' => __DIR__ . '/BookingType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\RootMutationType' => __DIR__ . '/RootMutationType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\UserType' => __DIR__ . '/UserType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\QueryType' => __DIR__ . '/QueryType.php',
+  'Overblog\\GraphQLBundle\\__DEFINITIONS__\\PageInfoType' => __DIR__ . '/PageInfoType.php',
 );
