@@ -24,7 +24,8 @@
         "symfony/validator": "^4.0",
         "symfony/yaml": "^4.0",
         "symfony/dotenv": "^4.0",
-        "jms/serializer-bundle": "^2"
+        "jms/serializer-bundle": "^2",
+        "symfony/monolog-bundle": "^3.2"
     },
     "require-dev": {
         "overblog/graphiql-bundle": "^0.1.0",
