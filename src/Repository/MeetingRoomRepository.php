@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
+ *
  * @method MeetingRoom|null find($id, $lockMode = null, $lockVersion = null)
  * @method MeetingRoom|null findOneBy(array $criteria, array $orderBy = null)
  * @method MeetingRoom[]    findAll()
@@ -14,37 +15,13 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class MeetingRoomRepository extends ServiceEntityRepository
 {
+    /**
+     * MeetingRoomRepository constructor.
+     *
+     * @param RegistryInterface $registry
+     */
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, MeetingRoom::class);
     }
-
-//    /**
-//     * @return MeetingRoom[] Returns an array of MeetingRoom objects
-//     */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?MeetingRoom
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

@@ -13,6 +13,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 class MeetingRoom extends Fixture
 {
     /**
+     *
      * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager)

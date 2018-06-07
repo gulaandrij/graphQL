@@ -12,6 +12,7 @@ class Users extends Fixture implements ContainerAwareInterface
     use ContainerAwareTrait;
 
     /**
+     *
      * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager): void

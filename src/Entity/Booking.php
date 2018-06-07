@@ -6,6 +6,7 @@ use App\Traits\DoctrineCreatedUpdatedTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ *
  * @ORM\Entity(repositoryClass="App\Repository\BookingRepository")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -14,6 +15,7 @@ class Booking
     use DoctrineCreatedUpdatedTrait;
 
     /**
+     *
      * @var int
      *
      * @ORM\Id()
@@ -23,6 +25,7 @@ class Booking
     private $id;
 
     /**
+     *
      * @var User
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="bookings", fetch="EAGER")
@@ -31,6 +34,7 @@ class Booking
     private $user;
 
     /**
+     *
      * @var MeetingRoom
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\MeetingRoom", fetch="EAGER")
@@ -38,6 +42,7 @@ class Booking
     private $meetingRoom;
 
     /**
+     *
      * @var \DateTime
      *
      * @ORM\Column(name="start_time", type="datetime")
@@ -45,6 +50,7 @@ class Booking
     private $startTime;
 
     /**
+     *
      * @var \DateTime
      *
      * @ORM\Column(name="end_time", type="datetime")
@@ -52,6 +58,7 @@ class Booking
     private $endTime;
 
     /**
+     *
      * @return int
      */
     public function getId(): int
@@ -60,6 +67,7 @@ class Booking
     }
 
     /**
+     *
      * @return User
      */
     public function getUser(): User
@@ -68,6 +76,7 @@ class Booking
     }
 
     /**
+     *
      * @param User $user
      */
     public function setUser(User $user): void
@@ -76,6 +85,7 @@ class Booking
     }
 
     /**
+     *
      * @return \DateTime
      */
     public function getStartTime(): \DateTime
@@ -84,6 +94,7 @@ class Booking
     }
 
     /**
+     *
      * @param \DateTime $startTime
      */
     public function setStartTime(\DateTime $startTime): void
@@ -92,6 +103,7 @@ class Booking
     }
 
     /**
+     *
      * @return \DateTime
      */
     public function getEndTime(): \DateTime
@@ -100,6 +112,7 @@ class Booking
     }
 
     /**
+     *
      * @param \DateTime $endTime
      */
     public function setEndTime(\DateTime $endTime): void
@@ -108,6 +121,7 @@ class Booking
     }
 
     /**
+     *
      * @return MeetingRoom
      */
     public function getMeetingRoom(): MeetingRoom
@@ -116,6 +130,7 @@ class Booking
     }
 
     /**
+     *
      * @param MeetingRoom $meetingRoom
      */
     public function setMeetingRoom(MeetingRoom $meetingRoom): void

@@ -6,8 +6,17 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
+/**
+ * Class Booking
+ *
+ * @package App\DataFixtures
+ */
 class Booking extends Fixture implements DependentFixtureInterface
 {
+    /**
+     *
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
 
@@ -16,7 +25,7 @@ class Booking extends Fixture implements DependentFixtureInterface
 
             $booking->setUser($this->getReference('admin'));
             $booking->setStartTime(new \DateTime("+$i hour"));
-            $nextI = $i+1;
+            $nextI = $i + 1;
             $booking->setEndTime(new \DateTime("+{$nextI} hour"));
             $booking->setMeetingRoom($this->getReference('firstMeetingRoom'));
 

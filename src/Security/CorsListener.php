@@ -12,6 +12,10 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 class CorsListener
 {
+    /**
+     *
+     * @param FilterResponseEvent $event
+     */
     public function onKernelResponse(FilterResponseEvent $event)
     {
         $responseHeaders = $event->getResponse()->headers;

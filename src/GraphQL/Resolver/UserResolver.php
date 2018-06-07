@@ -17,6 +17,7 @@ class UserResolver implements ResolverInterface, AliasedInterface
 {
 
     /**
+     *
      * @var EntityManagerInterface
      */
     private $em;
@@ -32,7 +33,8 @@ class UserResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
-     * @param Argument $args
+     *
+     * @param  Argument $args
      * @return User[]
      */
     public function resolve(Argument $args): ?array
@@ -41,6 +43,7 @@ class UserResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
+     *
      * @return array
      */
     public static function getAliases(): array

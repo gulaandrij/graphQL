@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
+ *
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="users")
  */
@@ -14,6 +15,7 @@ class User extends BaseUser
 {
 
     /**
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -21,6 +23,7 @@ class User extends BaseUser
     protected $id;
 
     /**
+     *
      * @var Booking[]
      *
      * @ORM\OneToMany(targetEntity="App\Entity\Booking", mappedBy="user")
@@ -38,6 +41,7 @@ class User extends BaseUser
     }
 
     /**
+     *
      * @return Booking[]
      */
     public function getBookings(): array
@@ -46,6 +50,7 @@ class User extends BaseUser
     }
 
     /**
+     *
      * @param Booking[] $bookings
      */
     public function setBookings(array $bookings): void

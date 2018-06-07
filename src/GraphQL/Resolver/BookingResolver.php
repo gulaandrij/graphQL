@@ -10,12 +10,14 @@ use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
 /**
  * Class BookingResolver
+ *
  * @package App\GraphQL\Resolver
  */
 class BookingResolver implements ResolverInterface, AliasedInterface
 {
 
     /**
+     *
      * @var EntityManagerInterface
      */
     private $em;
@@ -31,7 +33,8 @@ class BookingResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
-     * @param Argument $args
+     *
+     * @param  Argument $args
      * @return Booking|null
      */
     public function resolve(Argument $args): ?Booking
@@ -40,7 +43,8 @@ class BookingResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
-     * @param Argument $args
+     *
+     * @param  Argument $args
      * @return Booking|null
      */
     public function resolve1(Argument $args): ?Booking
@@ -49,13 +53,14 @@ class BookingResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
+     *
      * @return array
      */
     public static function getAliases(): array
     {
         return [
-            'resolve' => 'Booking',
-            'resolve1' => 'Booking1',
-        ];
+                'resolve'  => 'Booking',
+                'resolve1' => 'Booking1',
+               ];
     }
 }

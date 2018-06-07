@@ -10,12 +10,14 @@ use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 
 /**
  * Class MeetingRoomResolver
+ *
  * @package App\GraphQL\Resolver
  */
 class MeetingRoomResolver implements ResolverInterface, AliasedInterface
 {
 
     /**
+     *
      * @var EntityManagerInterface
      */
     private $em;
@@ -31,7 +33,8 @@ class MeetingRoomResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
-     * @param Argument $args
+     *
+     * @param  Argument $args
      * @return MeetingRoom
      */
     public function resolve(Argument $args): ?MeetingRoom
@@ -40,6 +43,7 @@ class MeetingRoomResolver implements ResolverInterface, AliasedInterface
     }
 
     /**
+     *
      * @return array
      */
     public static function getAliases(): array

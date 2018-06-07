@@ -6,6 +6,7 @@ use App\Traits\DoctrineCreatedUpdatedTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ *
  * @ORM\Entity(repositoryClass="App\Repository\MeetingRoomRepository")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -14,6 +15,7 @@ class MeetingRoom
     use DoctrineCreatedUpdatedTrait;
 
     /**
+     *
      * @var int
      *
      * @ORM\Id()
@@ -23,6 +25,7 @@ class MeetingRoom
     private $id;
 
     /**
+     *
      * @var string
      *
      * @ORM\Column(name="name", length=200, type="string")
@@ -30,6 +33,7 @@ class MeetingRoom
     private $name;
 
     /**
+     *
      * @return int
      */
     public function getId(): int
@@ -38,6 +42,7 @@ class MeetingRoom
     }
 
     /**
+     *
      * @return string
      */
     public function getName(): string
@@ -46,6 +51,7 @@ class MeetingRoom
     }
 
     /**
+     *
      * @param string $name
      */
     public function setName(string $name): void
